@@ -1,1 +1,1 @@
-# android-style-best-practices
+# Style best practices in Android development
