@@ -20,7 +20,8 @@
 Поэтому с самого начала желательно выделить наше стилевое ядро в отдельный модуль, в котором мы в дальнейшем будем вести разработку, но это по желанию так как это не критично.
 
 ### 1.	Создаем основные ресурсы
-Создаем файл **dimens.xml** и добовляем в него стандартный набор отсупов. Используйте имя `spacing_*` для **paddings** и **margins**.
+**dimens.xml**
+Используйте имя `spacing_*` для **paddings** и **margins**.
 Имейте в виду, что по [материал дизайну](https://material.io/design/layout/spacing-methods.html) компоненты должны выравниваться по шагу в 8dp и 4dp. А это значит, что у вас не должно существовать таких значений как 9dp, 2dp и уж темболее 7.5dp.
 
 ```xml
@@ -29,6 +30,36 @@
     <dimen name="spacing_normal">16dp</dimen>
     <dimen name="spacing_small">8dp</dimen>
     <dimen name="spacing_tiny">4dp</dimen>
+
+	<dimen name="icon_size">48dp</dimen>
+	<dimen name="icon_size_small">24dp</dimen>
+```
+
+**colors.xml**
+Цвета делятся на две группы первая это непоследственно сам цвет `black`, `red_dark`, `black_tr_38` из них мы сотовляем вторую группу `brand_primary` `text_light` `icon_dark`
+```xml
+	<color name="transparent">@android:color/transparent</color>
+
+	<color name="black">#FF000000</color>
+	<color name="black_tr_87">#DF000000</color>
+	<color name="black_tr_54">#8A000000</color>
+	<color name="black_tr_38">#61000000</color>
+	<color name="black_tr_12">#1E000000</color>
+
+	<color name="white">#FFFFFFFF</color>
+	<color name="white_tr_70">#B3FFFFFF</color>
+
+	<color name="red_dark">#B71C1C</color>
+	<color name="red_medium">#F44336</color>
+
+	<color name="yellow_medium">#FFE735</color>
+
+	<color name="orange_medium">#F57F17</color>
+
+	<color name="text_light">@color/white</color>
+    <color name="text_dark">@color/black_tr_87</color>
+	<color name="text_colored">@color/colorAccent</color>
+	<color name="text_error">@color/red_dark</color>
 ```
 
 ### 2.	Создаем styles_text.xml
