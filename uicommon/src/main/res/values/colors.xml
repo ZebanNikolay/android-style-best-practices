@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="transparent">@android:color/transparent</color>
+
+    <color name="black">#FF000000</color>
+    <color name="black_tr_87">#DF000000</color>
+    <color name="black_tr_54">#8A000000</color>
+    <color name="black_tr_38">#61000000</color>
+
+    <color name="white">#FFFFFFFF</color>
+    <color name="white_tr_70">#B3FFFFFF</color>
+
+    <color name="gray">#e5e5e5</color>
+
+    <color name="red_dark">#B71C1C</color>
+    <color name="red_medium">#F44336</color>
+
+    <color name="yellow">#FFE735</color>
+    <color name="orange">#F57F17</color>
+
+    <color name="primary">@color/red_medium</color>
+    <color name="primary_dark">@color/red_dark</color>
+    <color name="accent">@color/black</color>
+
+    <color name="background">@color/gray</color>
+    <color name="surface">@color/white</color>
+
+    <color name="text_light">@color/white</color>
+    <color name="text_dark">@color/black_tr_87</color>
+    <color name="text_colored">@color/colorAccent</color>
+    <color name="text_error">@color/red_dark</color>
+
+    <color name="icon_dark">@color/black_tr_87</color>
+</resources>
