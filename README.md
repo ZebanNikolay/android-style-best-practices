@@ -5,12 +5,12 @@
 ## Summary
 
 #### [Проблема](#Проблема-1)
-#### [1.	Создаем основные ресурсы](#Создаем-основные-ресурсы)
-#### [2.	Создаем styles_text.xml](#)
-#### [3.	Создаем файлы для компонентов](#)
-#### [4.	Создаем тему нашего приложения](#)
-#### [5.	Проходимся по нашим экранам перерабатывая на новый стиль](#)
-#### [6.	Чистим и удаляем все deprecated стили](#)
+#### [1.	Создаем dimens.xml, colors.xml, strings.xml ресурсы](#1Создаем-dimensxml-colorsxml-stringsxml-ресурсы-1)
+#### [2.	Создаем styles_text.xml](#2Создаем-styles_textxml-1)
+#### [3.	Создаем файлы для компонентов](#3Создаем-файлы-для-компонентов-1)
+#### [4.	Создаем тему нашего приложения](#4Создаем-тему-нашего-приложения-1)
+#### [5.	Проходимся по нашим экранам перерабатывая на новый стиль](#5Проходимся-по-нашим-экранам-перерабатывая-на-новый-стиль-1)
+#### [6.	Чистим и удаляем все deprecated стили](#6Чистим-и-удаляем-все-deprecated-стили-1)
 
 
 ### Проблема
@@ -19,7 +19,7 @@
 Наша работа заключается в том, что мы должны написать заранее максимально полное стилевое ядро нашего приложения с четкой и понятной структурой как снаружи, так и внутри. Не явная грань или ее отсутствие первый шаг к бардаку в стилях. Четкая структура снаружи подразумевает, что явно прослеживается разделение стилей уровня приложения от стилей отдельной фитчи. Четкая структура внутри подразумевает, что мы легко понимаем где хранятся стили кнопок, а где для текста. 
 Поэтому с самого начала желательно выделить наше стилевое ядро в отдельный модуль, в котором мы в дальнейшем будем вести разработку, но это по желанию так как это не критично.
 
-### 1.	Создаем основные ресурсы
+### 1.	Создаем dimens.xml, colors.xml, **strings.xml** ресурсы
 **dimens.xml**
 
 Используйте имя `spacing_*` для **paddings** и **margins**.
@@ -50,6 +50,8 @@
     <color name="white">#FFFFFFFF</color>
     <color name="white_tr_70">#B3FFFFFF</color>
 
+    <color name="gray">#e5e5e5</color>
+
     <color name="red_dark">#B71C1C</color>
     <color name="red_medium">#F44336</color>
 
@@ -60,6 +62,9 @@
     <color name="primary_dark">@color/red_dark</color>
     <color name="accent">@color/black</color>
 
+    <color name="background">@color/gray</color>
+    <color name="surface">@color/white</color>
+
     <color name="text_light">@color/white</color>
     <color name="text_dark">@color/black_tr_87</color>
     <color name="text_colored">@color/colorAccent</color>
@@ -67,6 +72,27 @@
 
     <color name="icon_dark">@color/black_tr_87</color>
 ```
+
+**strings.xml** и **strings_untranslatable.xml**
+ 
+В **strings.xml** мы складываем общие строки уровня приложения
+```xml
+	<string name="app_name">Android style best practices</string>
+
+	<string name="button_label_ok">OK</string>
+	<string name="button_label_cancel">Cancel</string>
+	<string name="button_label_download">Download</string>
+
+	<string name="error_message_an_error">An error occurred</string>
+	<string name="error_message_call">Call failed</string>
+	<string name="error_message_download">File download failed</string>
+```
+В **strings_untranslatable.xml** складываем не переводимые строки типо ссылок или api ключей
+```xml
+	<string name="server_url" translatable="false">https://github.com/ZebanNikolay/android-style-best-practices</string>
+	<string name="some_service_api_key" translatable="false">key</string>
+```
+Так же не забывайте если ваш файл **strings.xml** раздулся не стесьняйтесь его дробить на более мелкие **strings_errors.xml**, **strings_buttons.xml** и т.д.
 
 ### 2.	Создаем styles_text.xml
 ### 3.	Создаем файлы для компонентов
