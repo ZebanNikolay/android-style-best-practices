@@ -3,4 +3,8 @@
 	<string name="server_url" translatable="false">https://github.com/ZebanNikolay/android-style-best-practices</string>
 	<string name="some_service_api_key" translatable="false">key</string>
 
+	<string name="font_roboto_regular" translatable="false">sans-serif</string>
+	<string name="font_roboto_medium" translatable="false">sans-serif-medium</string>
+	<string name="font_roboto_light" translatable="false">sans-serif-light</string>
+
 </resources>

@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+	<style name="TextAppearance.Headline1" parent="Base.TextAppearance.Headline1">
+		<item name="android:letterSpacing">-0.015625</item>
+	</style>
+
+	<style name="TextAppearance.Headline2" parent="Base.TextAppearance.Headline2">
+		<item name="android:letterSpacing">-0.00833333333</item>
+	</style>
+
+	<style name="TextAppearance.Headline4" parent="Base.TextAppearance.Headline4">
+		<item name="android:letterSpacing">0.00735294118</item>
+	</style>
+
+	<style name="TextAppearance.Headline6" parent="Base.TextAppearance.Headline6">
+		<item name="android:letterSpacing">0.0125</item>
+	</style>
+
+	<style name="TextAppearance.Subtitle1" parent="Base.TextAppearance.Subtitle1">
+		<item name="android:letterSpacing">0.009375</item>
+	</style>
+
+	<style name="TextAppearance.Subtitle2" parent="Base.TextAppearance.Subtitle2">
+		<item name="android:letterSpacing">0.00714285714</item>
+	</style>
+
+	<style name="TextAppearance.Body1" parent="Base.TextAppearance.Body1">
+		<item name="android:letterSpacing">0.03125</item>
+	</style>
+
+	<style name="TextAppearance.Body2" parent="Base.TextAppearance.Body2">
+		<item name="android:letterSpacing">0.0178571429</item>
+	</style>
+
+	<style name="TextAppearance.Button" parent="Base.TextAppearance.Button">
+		<item name="android:letterSpacing">0.0892857143</item>
+	</style>
+
+	<style name="TextAppearance.Caption" parent="Base.TextAppearance.Caption">
+		<item name="android:letterSpacing">0.0333333333</item>
+	</style>
+
+	<style name="TextAppearance.Overline" parent="Base.TextAppearance.Overline">
+		<item name="android:letterSpacing">0.166666667</item>
+	</style>
+
+</resources>
