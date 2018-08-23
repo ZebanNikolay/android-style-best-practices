@@ -1,0 +1,6 @@
+<resources>
+
+	<string name="server_url" translatable="false">https://github.com/ZebanNikolay/android-style-best-practices</string>
+	<string name="some_service_api_key" translatable="false">key</string>
+
+</resources>

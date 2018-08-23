@@ -1,3 +1,14 @@
 <resources>
 
+	<string name="app_name">Android style best practices</string>
+
+	<string name="button_label_ok">OK</string>
+	<string name="button_label_cancel">Cancel</string>
+	<string name="button_label_save">Save</string>
+	<string name="button_label_download">Download</string>
+
+	<string name="error_message_an_error">An error occurred</string>
+	<string name="error_message_call">Call failed</string>
+	<string name="error_message_download">File download failed</string>
+
 </resources>
