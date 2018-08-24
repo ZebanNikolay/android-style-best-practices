@@ -150,10 +150,12 @@
 </style>
 ```
 И стиль `TextAppearance.Headline6` которым мы будем пользоваться уже в разметке и в котором параметры для подходяших API.
+
 **res/values/styles_text.xml**
 ```xml
 <style name="TextAppearance.Headline6" parent="Base.TextAppearance.Headline6"/>
 ```
+
 **res/values-v21/styles_text.xml**
 ```xml
 <style name="TextAppearance.Headline6" parent="Base.TextAppearance.Headline6">
@@ -165,9 +167,13 @@
 Ни когда не пользуйтесь ситлями в разметке которые начинаются с `Base` так как они не полные и нужны для избавления от дублирования кода.
 
 Стили из этого файла должны проставлятся в разметку только с помощью параметра **textAppearance**
+
 `android:textAppearance="TextAppearance.Headline6"`
+
 Распостраненная ошибка это когда проставляют с помощью параметра **style**. Не стоит так делать по двум причинам:
+
 Во первых **textAppearance** может содержать только стили связанные с текстом и мы сразу обнаружем ошибку если стили например layout просачатся в наши текстовые стили.
+
 И во вторых это единственная возможность для слияния двух стилей.
 ```xml
     <Button
