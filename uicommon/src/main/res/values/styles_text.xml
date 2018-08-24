@@ -84,6 +84,12 @@
 	<style name="TextAppearance.Body1" parent="Base.TextAppearance.Body2"/>
 	<style name="TextAppearance.Body2" parent="Base.TextAppearance.Body1"/>
 	<style name="TextAppearance.Button" parent="Base.TextAppearance.Button"/>
+	<style name="TextAppearance.Button.Colored">
+		<item name="android:textColor">@color/text_colored</item>
+	</style>
+	<style name="TextAppearance.Button.Inverse">
+		<item name="android:textColor">@color/text_light</item>
+	</style>
 	<style name="TextAppearance.Caption" parent="Base.TextAppearance.Caption"/>
 	<style name="TextAppearance.Overline" parent="Base.TextAppearance.Overline"/>
 </resources>
