@@ -124,7 +124,9 @@
 </style>
 ```
 
-В андройд существует два вида наследования явный через параметр parent `<style name="ChildName" parent="ParentName"/>` и неявный через параметр name `<style name="ParentName.ChildName">` мы будем использовать оба.
+В андройд существует два вида наследования явный через параметр parent
+`<style name="ChildName" parent="ParentName"/>` и неявный через параметр name
+`<style name="ParentName.ChildName">` мы будем использовать оба.
 
 Одна из самых распостроненных ошибок это когда разработчик использует оба вида наследования одновременно и уверен что они сольются. К сожалению это не так, если присутствует явное наследование через параметр `parent` то не явное не будет использоваться совсем.
 
@@ -139,7 +141,7 @@
 	<item name="android:letterSpacing">0.0125</item>
 </style>
 ```
-Так как параметр `letterSpacing` доступен только с API 21 мы создаем стиль `Base.TextAppearance.Headline6` который наследуют все платформы.
+Так как параметр `letterSpacing` доступен только с API 21 мы создаем стиль `Base.TextAppearance.Headline6` который наполняется параметрами для всех API.
 ```xml
 <style name="Base.TextAppearance.Headline6">
 	<item name="fontFamily">@string/font_roboto_medium</item>
@@ -147,7 +149,7 @@
 	<item name="android:textSize">20sp</item>
 </style>
 ```
-И стиль `TextAppearance.Headline6` которым мы будем пользоваться уже в разметке.
+И стиль `TextAppearance.Headline6` которым мы будем пользоваться уже в разметке и в котором параметры для подходяших API.
 **res/values/styles_text.xml**
 ```xml
 <style name="TextAppearance.Headline6" parent="Base.TextAppearance.Headline6"/>
@@ -160,7 +162,22 @@
 ```
 Таким образом когда мы пользуемся в разметке стилем `TextAppearance.Headline6` у нас будут применяться нужные стили для данной платформы.
 
-Ни когда не пользуйтесь ситлями в разметке которые начинаются с `Base` так как они не полные.
+Ни когда не пользуйтесь ситлями в разметке которые начинаются с `Base` так как они не полные и нужны для избавления от дублирования кода.
+
+Стили из этого файла должны проставлятся в разметку только с помощью параметра **textAppearance**
+`android:textAppearance="TextAppearance.Headline6"`
+Распостраненная ошибка это когда проставляют с помощью параметра **style**. Не стоит так делать по двум причинам:
+Во первых **textAppearance** может содержать только стили связанные с текстом и мы сразу обнаружем ошибку если стили например layout просачатся в наши текстовые стили.
+И во вторых это единственная возможность для слияния двух стилей.
+```xml
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="@style/TextAppearance.Button"
+        style="@style/Widget.AppCompat.Button"/>
+```
+
+Полный файл [styles_text.xml](./uicommon/src/main/res/values/styles_text.xml)
 
 ### 3.	Создаем файлы для компонентов
 ### 4.	Создаем тему нашего приложения
