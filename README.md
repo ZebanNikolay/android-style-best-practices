@@ -106,6 +106,22 @@
 
 	<style name="TextAppearance" parent="Base.TextAppearance"/>
 ```
+Далее создаем все стили текстов нашего приложения наследуясь от основного стиля как в данном примере.
+```xml
+<style name="Base.TextAppearance.Button">
+	<item name="fontFamily">@string/font_roboto_medium</item>
+	<item name="android:textStyle">bold</item>
+	<item name="textAllCaps">true</item>
+	<item name="android:textSize">14sp</item>
+</style>
+<style name="TextAppearance.Button" parent="Base.TextAppearance.Button"/>
+<style name="TextAppearance.Button.Colored" parent="Base.TextAppearance.Button">
+	<item name="android:textColor">@color/text_colored</item>
+</style>
+<style name="TextAppearance.Button.Inverse" parent="Base.TextAppearance.Button">
+	<item name="android:textColor">@color/text_light</item>
+</style>
+```
 
 В андройд существует два вида наследования явный через параметр parent `<style name="ChildName" parent="ParentName"/>` и неявный через параметр name `<style name="ParentName.ChildName">` мы будем использовать оба.
 
@@ -124,7 +140,7 @@
 	<item name="android:letterSpacing">0.0125</item>
 </style>
 ```
-Так как параметр `letterSpacing` доступен только с API 21 мы создаем стиль `Base.TextAppearance.Headline6` который наследуют все платформы без параметра `letterSpacing`.
+Так как параметр `letterSpacing` доступен только с API 21 мы создаем стиль `Base.TextAppearance.Headline6` который наследуют все платформы.
 ```xml
 <style name="Base.TextAppearance.Headline6">
 	<item name="fontFamily">sans-serif-medium</item>
@@ -145,7 +161,11 @@
 	<item name="android:letterSpacing">0.0125</item>
 </style>
 ```
-Ни когда не пользуйтесь ситлями в разметке которые начинаются с **Base** так как они не полные.
+Таким образом когда мы пользуемся в разметке стилем `TextAppearance.Headline6` у нас будут применяться нужные стили для данной платформы.
+
+Ни когда не пользуйтесь ситлями в разметке которые начинаются с `Base` так как они не полные.
+
+
 
 ### 3.	Создаем файлы для компонентов
 ### 4.	Создаем тему нашего приложения
