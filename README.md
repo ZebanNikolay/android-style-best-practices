@@ -106,7 +106,7 @@
 
 <style name="TextAppearance" parent="Base.TextAppearance"/>
 ```
-Далее создаем все стили текстов нашего приложения наследуясь от основного стиля как в данном примере.
+Далее создаем все стили текстов нашего приложения наследуясь от основного стиля как в данном примере переопределяя или добовляя новые параметры.
 ```xml
 <style name="Base.TextAppearance.Button">
 	<item name="fontFamily">@string/font_roboto_medium</item>
