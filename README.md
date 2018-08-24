@@ -97,14 +97,14 @@
 ### 2.	Создаем стили текста
 Создаем файл **styles_text.xml** в нем будут хранится все стили предназначенные для стилизации текста. Добовляем в него два родительских стиля `Base.TextAppearance`, `TextAppearance` от них будут наследоваться все наши текстовые стили поэтому в них будут находится все общие параметры.
 ```xml
-	<style name="Base.TextAppearance">
-		<item name="fontFamily">@string/font_roboto_regular</item>
-		<item name="android:textColor">@color/text_dark</item>
-		<item name="android:textStyle">normal</item>
-		<item name="textAllCaps">false</item>
-	</style>
+<style name="Base.TextAppearance">
+	<item name="fontFamily">@string/font_roboto_regular</item>
+	<item name="android:textColor">@color/text_dark</item>
+	<item name="android:textStyle">normal</item>
+	<item name="textAllCaps">false</item>
+</style>
 
-	<style name="TextAppearance" parent="Base.TextAppearance"/>
+<style name="TextAppearance" parent="Base.TextAppearance"/>
 ```
 Далее создаем все стили текстов нашего приложения наследуясь от основного стиля как в данном примере.
 ```xml
@@ -114,11 +114,12 @@
 	<item name="textAllCaps">true</item>
 	<item name="android:textSize">14sp</item>
 </style>
+
 <style name="TextAppearance.Button" parent="Base.TextAppearance.Button"/>
-<style name="TextAppearance.Button.Colored" parent="Base.TextAppearance.Button">
+<style name="TextAppearance.Button.Colored">
 	<item name="android:textColor">@color/text_colored</item>
 </style>
-<style name="TextAppearance.Button.Inverse" parent="Base.TextAppearance.Button">
+<style name="TextAppearance.Button.Inverse">
 	<item name="android:textColor">@color/text_light</item>
 </style>
 ```
