@@ -6,7 +6,7 @@
 
 #### [Проблема](#Проблема-1)
 #### [1.	Создаем dimens.xml, colors.xml, strings.xml ресурсы](#1Создаем-dimensxml-colorsxml-stringsxml-ресурсы-1)
-#### [2.	Создаем styles_text.xml](#2Создаем-styles_textxml-1)
+#### [2.	Создаем стили текста](#2Создаем-стили-текста-1)
 #### [3.	Создаем файлы для компонентов](#3Создаем-файлы-для-компонентов-1)
 #### [4.	Создаем тему нашего приложения](#4Создаем-тему-нашего-приложения-1)
 #### [5.	Проходимся по нашим экранам перерабатывая на новый стиль](#5Проходимся-по-нашим-экранам-перерабатывая-на-новый-стиль-1)
@@ -94,11 +94,58 @@
 ```
 Так же не забывайте если ваш файл **strings.xml** раздулся не стесьняйтесь его дробить на более мелкие **strings_errors.xml**, **strings_buttons.xml** и т.д.
 
-### 2.	Создаем styles_text.xml
-Создаем файл **styles_text.xml** в нем будут хранится все стили предназначенные для стилизации текста. Добовляем в него два родительских стиля `Base.TextAppearance`, `TextAppearance` от них будут наследоваться все наши текстовые стили.
+### 2.	Создаем стили текста
+Создаем файл **styles_text.xml** в нем будут хранится все стили предназначенные для стилизации текста. Добовляем в него два родительских стиля `Base.TextAppearance`, `TextAppearance` от них будут наследоваться все наши текстовые стили поэтому в них будут находится все общие параметры.
+```xml
+	<style name="Base.TextAppearance">
+		<item name="fontFamily">@string/font_roboto_regular</item>
+		<item name="android:textColor">@color/text_dark</item>
+		<item name="android:textStyle">normal</item>
+		<item name="textAllCaps">false</item>
+	</style>
 
-В андройд существует два вида наследования явный через параметр `<style name="ChildName" parent="ParentName"/>` и неявный через параметр `<style name="ParentName.ChildName">`
-Одна из самых распостроненных ошибок это когда разработчик использует оба вида наследования и уверен что они сольются. К сожалению это не так, если присутствует явное наследование через параметр `parent` то не явное не будет использоваться совсем. 
+	<style name="TextAppearance" parent="Base.TextAppearance"/>
+```
+
+В андройд существует два вида наследования явный через параметр parent `<style name="ChildName" parent="ParentName"/>` и неявный через параметр name `<style name="ParentName.ChildName">` мы будем использовать оба.
+
+Одна из самых распостроненных ошибок это когда разработчик использует оба вида наследования одновременно и уверен что они сольются. К сожалению это не так, если присутствует явное наследование через параметр `parent` то не явное не будет использоваться совсем.
+
+**Base** нужен для того чтобы решать проблему совместимости разных платформ без дублирования кода.
+Например возьмем стандартный материал стиль `Headline6`.
+
+```xml
+<style name="TextAppearance.Headline6">
+	<item name="fontFamily">sans-serif-medium</item>
+	<item name="android:textStyle">bold</item>
+	<item name="android:textSize">20sp</item>
+	<item name="android:textStyle">normal</item>
+	<item name="textAllCaps">false</item>
+	<item name="android:letterSpacing">0.0125</item>
+</style>
+```
+Так как параметр `letterSpacing` доступен только с API 21 мы создаем стиль `Base.TextAppearance.Headline6` который наследуют все платформы без параметра `letterSpacing`.
+```xml
+<style name="Base.TextAppearance.Headline6">
+	<item name="fontFamily">sans-serif-medium</item>
+	<item name="android:textStyle">bold</item>
+	<item name="android:textSize">20sp</item>
+	<item name="android:textStyle">normal</item>
+	<item name="textAllCaps">false</item>
+</style>
+```
+И стиль `TextAppearance.Headline6` которым мы будем пользоваться уже в разметке.
+**res/values/styles_text.xml**
+```xml
+<style name="TextAppearance.Headline6" parent="Base.TextAppearance.Headline6"/>
+```
+**res/values-v21/styles_text.xml**
+```xml
+<style name="TextAppearance.Headline6" parent="Base.TextAppearance.Headline6">
+	<item name="android:letterSpacing">0.0125</item>
+</style>
+```
+Ни когда не пользуйтесь ситлями в разметке которые начинаются с **Base** так как они не полные.
 
 ### 3.	Создаем файлы для компонентов
 ### 4.	Создаем тему нашего приложения
