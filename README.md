@@ -132,23 +132,19 @@
 Например возьмем стандартный материал стиль `Headline6`.
 
 ```xml
-<style name="TextAppearance.Headline6">
-	<item name="fontFamily">sans-serif-medium</item>
+<style name="Base.TextAppearance.Headline6">
+	<item name="fontFamily">@string/font_roboto_medium</item>
 	<item name="android:textStyle">bold</item>
 	<item name="android:textSize">20sp</item>
-	<item name="android:textStyle">normal</item>
-	<item name="textAllCaps">false</item>
 	<item name="android:letterSpacing">0.0125</item>
 </style>
 ```
 Так как параметр `letterSpacing` доступен только с API 21 мы создаем стиль `Base.TextAppearance.Headline6` который наследуют все платформы.
 ```xml
 <style name="Base.TextAppearance.Headline6">
-	<item name="fontFamily">sans-serif-medium</item>
+	<item name="fontFamily">@string/font_roboto_medium</item>
 	<item name="android:textStyle">bold</item>
 	<item name="android:textSize">20sp</item>
-	<item name="android:textStyle">normal</item>
-	<item name="textAllCaps">false</item>
 </style>
 ```
 И стиль `TextAppearance.Headline6` которым мы будем пользоваться уже в разметке.
@@ -165,8 +161,6 @@
 Таким образом когда мы пользуемся в разметке стилем `TextAppearance.Headline6` у нас будут применяться нужные стили для данной платформы.
 
 Ни когда не пользуйтесь ситлями в разметке которые начинаются с `Base` так как они не полные.
-
-
 
 ### 3.	Создаем файлы для компонентов
 ### 4.	Создаем тему нашего приложения
