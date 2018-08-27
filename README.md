@@ -194,7 +194,7 @@
 
 Не забываем пользоваться [tool attributes](https://developer.android.com/studio/write/tool-attributes). Для корректной отрисовки верстки. Многие программисты пренебрегают этим инструментом, хотя на больших проектах он экономит массу времени при поиске нужного экрана и внесении изменений при верстке.
 
-Если нечего написать в tools изпользуйте фэйковые данные [@tools:sample/*](https://developer.android.com/studio/write/tool-attributes#toolssample_resources). Для текста пишем **@tools:sample/lorem[8]** в квадратных скобках колличество слов, для имени **@tools:sample/full_names** для картинок **@tools:sample/backgrounds/scenic** и т.д. Не забываем, что можно создать свои собственные фэйковые данные.
+Если нечего написать в tools изпользуйте фэйковые данные [@tools:sample/*](https://developer.android.com/studio/write/tool-attributes#toolssample_resources). Для текста пишем `@tools:sample/lorem[8]` в квадратных скобках колличество слов, для имени `@tools:sample/full_names` для картинок `@tools:sample/backgrounds/scenic` и т.д. Не забываем, что можно создать свои собственные фэйковые данные.
 
 ### 6.	Чистим и удаляем все deprecated стили
 
