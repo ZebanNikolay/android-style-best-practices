@@ -196,6 +196,35 @@
 ### 5.	Создаем тему нашего приложения
 Обычно одному приложению нужна одна тема, но я покажу процес создания двух тем для случая если вы хотите во время runtime менят темы или в вашем приложении несколько [flavors](https://developer.android.com/studio/build/build-variants#product-flavors) с разными дизайнами.
 
+Добавляем файл **styles_themes.xml**, а в нем создаем нашу родительскую тему от которой мы будем наследоваться. Она описывает общие параметры. И создаем две темы дочерних темы в которых описываем различающиеся параметры.
+
+```xml
+<style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+	<item name="android:colorBackground">@color/white</item>
+
+	<item name="buttonStyle">@style/Component.Button</item>
+</style>
+<style name="AppTheme.Indigo">
+	<item name="colorPrimary">@color/indigo_medium</item>
+	<item name="colorPrimaryDark">@color/indigo_dark</item>
+	<item name="colorAccent">@color/orange</item>
+
+	<item name="customComponentStyle">@style/Component.Custom.One</item>
+</style>
+
+<style name="AppTheme.Red">
+	<item name="colorPrimary">@color/red_medium</item>
+	<item name="colorPrimaryDark">@color/red_dark</item>
+	<item name="colorAccent">@color/black</item>
+	
+	<item name="customComponentStyle">@style/Component.Custom.Second</item>
+</style>
+```
+Смысл тем в том чтобы соотнести нужные стили к ссылкам([attribute](https://developer.android.com/reference/org/xml/sax/Attributes)) которые мы будем простовлять непосредственно в разметке. То есть при смене темы в приложение по ссылке будет устанавливаться нужный стиль компонента.
+
+Под каждый наш компонет создаем соответствующий [attribute](https://developer.android.com/reference/org/xml/sax/Attributes) в файле **attr.xml**. И ставим его в родительскую тему если он одинаковый в дочерних темах или в дочерние если стиль разный. У некоторых компонетов атрибуты уже существуют изначально в андройде, например `buttonStyle`. Можно использовать их а не создовать новые.
+
+
 ### 6.	Проходимся по нашим экранам перерабатывая на новый стиль
 Проходимся по каждому экрану, и заменяем неактуальные стили на новые.
 
