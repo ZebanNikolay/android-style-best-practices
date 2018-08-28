@@ -2,6 +2,8 @@
 <resources>
 	<style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
 		<item name="android:colorBackground">@color/white</item>
+		<item name="android:textColorPrimary">@color/text_primary</item>
+		<item name="android:textColorSecondary">@color/text_secondary</item>
 
 		<item name="buttonStyle">@style/Component.Button</item>
 		<item name="contentContainerStyle">@style/Component.ContentContainer</item>
@@ -10,7 +12,7 @@
 	<style name="AppTheme.Indigo">
 		<item name="colorPrimary">@color/indigo_medium</item>
 		<item name="colorPrimaryDark">@color/indigo_dark</item>
-		<item name="colorAccent">@color/orange</item>
+		<item name="colorAccent">@color/teal</item>
 
 		<item name="customComponentStyle">@style/Component.Custom.One</item>
 	</style>

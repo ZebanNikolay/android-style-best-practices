@@ -8,10 +8,21 @@
 		<item name="android:padding">@dimen/spacing_normal</item>
 	</style>
 
+	<style name="Base.Component.ListItemContainer">
+		<item name="android:background">@color/white</item>
+		<item name="android:padding">@dimen/spacing_small</item>
+	</style>
+
 	<style name="Component.ContentContainer" parent="Base.Component.ContentContainer"/>
 
 	<style name="Component.Button" parent="Widget.AppCompat.Button">
 		<item name="android:textAppearance">@style/TextAppearance.Headline3</item>
+	</style>
+
+	<style name="Component.Label">
+		<item name="android:textAppearance">@style/TextAppearance.Subtitle1</item>
+		<item name="android:layout_marginTop">@dimen/spacing_small</item>
+		<item name="android:layout_marginBottom">@dimen/spacing_small</item>
 	</style>
 
 	<style name="Component.Custom"/>
