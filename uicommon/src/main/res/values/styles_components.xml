@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+	<style name="Base.Component"/>
+	<style name="Component"/>
+
+	<style name="Base.Component.ContentContainer">
+		<item name="android:background">@color/surface</item>
+		<item name="android:padding">@dimen/spacing_normal</item>
+	</style>
+
+	<style name="Component.ContentContainer" parent="Base.Component.ContentContainer"/>
+
+	<style name="Component.Button" parent="Widget.AppCompat.Button">
+		<item name="android:textAppearance">@style/TextAppearance.Headline3</item>
+	</style>
+
+	<style name="Component.Custom"/>
+	<style name="Component.Custom.One">
+		<item name="android:textAppearance">@style/TextAppearance.Headline5</item>
+	</style>
+	<style name="Component.Custom.Second">
+		<item name="android:textAppearance">@style/TextAppearance.Headline6</item>
+	</style>
+
+</resources>

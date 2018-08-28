@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+	<style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+		<item name="android:colorBackground">@color/white</item>
+
+		<item name="buttonStyle">@style/Component.Button</item>
+		<item name="contentContainerStyle">@style/Component.ContentContainer</item>
+	</style>
+
+	<style name="AppTheme.Indigo">
+		<item name="colorPrimary">@color/indigo_medium</item>
+		<item name="colorPrimaryDark">@color/indigo_dark</item>
+		<item name="colorAccent">@color/orange</item>
+
+		<item name="customComponentStyle">@style/Component.Custom.One</item>
+	</style>
+
+	<style name="AppTheme.Red">
+		<item name="colorPrimary">@color/red_medium</item>
+		<item name="colorPrimaryDark">@color/red_dark</item>
+		<item name="colorAccent">@color/black</item>
+
+		<item name="customComponentStyle">@style/Component.Custom.Second</item>
+	</style>
+</resources>

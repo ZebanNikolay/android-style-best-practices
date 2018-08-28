@@ -7,17 +7,21 @@ import android.view.Menu
 import android.view.MenuItem
 
 import kotlinx.android.synthetic.main.activity_main.*
+import android.app.Activity
+import kotlinx.android.synthetic.main.content_main.*
+import android.content.SharedPreferences
+
 class MainActivity : AppCompatActivity() {
+
+    val INDIGO = "indigo"
+    val RED = "red"
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        setTheme(getSavedTheme())
         setContentView(R.layout.activity_main)
         setSupportActionBar(toolbar)
 
-        fab.setOnClickListener { view ->
-            Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                    .setAction("Action", null).show()
-        }
     }
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
@@ -27,12 +31,27 @@ class MainActivity : AppCompatActivity() {
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
-        return when(item.itemId) {
-            R.id.action_settings -> true
+        when(item.itemId) {
+            R.id.action_red_theme -> saveTheme(RED);
+            R.id.action_indigo_theme -> saveTheme(INDIGO);
             else -> super.onOptionsItemSelected(item)
+        }
+        return true
+    }
+
+    private fun saveTheme(value: String) {
+        val editor = getPreferences(Activity.MODE_PRIVATE).edit()
+        editor.putString("theme", value)
+        editor.commit()
+        recreate()
+    }
+
+    private fun getSavedTheme(): Int {
+        val theme = getPreferences(Activity.MODE_PRIVATE).getString("theme", INDIGO)
+        when (theme) {
+            RED -> return R.style.AppTheme_Red
+            INDIGO -> return R.style.AppTheme_Indigo
+            else -> return R.style.AppTheme_Red
         }
     }
 }

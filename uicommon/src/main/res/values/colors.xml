@@ -15,19 +15,18 @@
     <color name="red_dark">#B71C1C</color>
     <color name="red_medium">#F44336</color>
 
+    <color name="indigo_dark">#303F9F</color>
+    <color name="indigo_medium">#3F51B5</color>
+
     <color name="yellow">#FFE735</color>
     <color name="orange">#F57F17</color>
-
-    <color name="primary">@color/red_medium</color>
-    <color name="primary_dark">@color/red_dark</color>
-    <color name="accent">@color/black</color>
 
     <color name="background">@color/gray</color>
     <color name="surface">@color/white</color>
 
     <color name="text_light">@color/white</color>
     <color name="text_dark">@color/black_tr_87</color>
-    <color name="text_colored">@color/primary_dark</color>
+    <color name="text_colored">?colorPrimary</color>
     <color name="text_error">@color/red_dark</color>
 
     <color name="icon_dark">@color/black_tr_87</color>

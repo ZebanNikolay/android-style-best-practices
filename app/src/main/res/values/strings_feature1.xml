@@ -1,3 +1,4 @@
 <resources>
-	<string name="action_settings">Settings</string>
+	<string name="action_red_theme">Red Theme</string>
+	<string name="action_indigo_theme">Indigo Theme</string>
 </resources>

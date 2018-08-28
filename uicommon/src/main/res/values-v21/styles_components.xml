@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+	<style name="Component.ContentContainer" parent="Base.Component.ContentContainer">
+		<item name="android:elevation">@dimen/elevation_card</item>
+	</style>
+</resources>

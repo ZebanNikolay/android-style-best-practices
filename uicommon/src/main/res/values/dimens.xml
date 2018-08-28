@@ -10,4 +10,7 @@
     <dimen name="icon_size">48dp</dimen>
     <dimen name="icon_size_small">24dp</dimen>
 
+    <dimen name="elevation_card">1dp</dimen>
+    <dimen name="elevation_toolbar">4dp</dimen>
+
 </resources>

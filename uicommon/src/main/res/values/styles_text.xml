@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
+	<style name="Base" />
+
 	<style name="Base.TextAppearance">
 		<item name="fontFamily">@string/font_roboto_regular</item>
 		<item name="android:textColor">@color/text_dark</item>
@@ -25,7 +27,7 @@
 	<style name="Base.TextAppearance.Headline6">
 		<item name="fontFamily">@string/font_roboto_medium</item>
 		<item name="android:textStyle">bold</item>
-		<item name="android:textSize">20sp</item>
+		<item name="android:textSize">18sp</item>
 	</style>
 
 	<style name="Base.TextAppearance.Subtitle1">
