@@ -8,7 +8,7 @@
 #### [1.	Подготовка](#2Подготовка-1)
 #### [2.	Создаем dimens.xml, colors.xml, strings.xml ресурсы](#2Создаем-dimensxml-colorsxml-stringsxml-ресурсы-1)
 #### [3.	Создаем стили текста](#3Создаем-стили-текста-1)
-#### [4.	Создаем файлы для компонентов](#4Создаем-файлы-для-компонентов-1)
+#### [4.	Создаем стили компонентов](#4Создаем-стили-компонентов-1)
 #### [5.	Создаем тему нашего приложения](#5Создаем-тему-нашего-приложения-1)
 #### [6.	Проходимся по нашим экранам перерабатывая на новый стиль](#6Проходимся-по-нашим-экранам-перерабатывая-на-новый-стиль-1)
 #### [7.	Чистим и удаляем все deprecated стили](#7Чистим-и-удаляем-все-deprecated-стили-1)
@@ -192,7 +192,25 @@
 
 Полный файл [styles_text.xml](./uicommon/src/main/res/values/styles_text.xml)
 
-### 4.	Создаем файлы для компонентов
+### 4.	Создаем стили компонентов
+
+**styles_components.xml**
+
+В этом файле описываем компоненты нашего приложения, таким же принципом как мы это уже делали в предыдущей главе. Родительскую тему предпочитаю называть `Component` так как это название более широкое чем `Widget`. Помимо разных виджетов типо `Button` опишите еще все контейнеры.
+
+```xml
+<style name="Component.ContentContainer">
+	<item name="android:background">@color/surface</item>
+	<item name="android:padding">@dimen/spacing_normal</item>
+	<item name="android:elevation">@dimen/elevation_card</item>
+</style>
+
+<style name="Component.ListItemContainer">
+	<item name="android:background">@color/white</item>
+	<item name="android:padding">@dimen/spacing_small</item>
+</style>
+```
+
 ### 5.	Создаем тему нашего приложения
 Обычно одному приложению нужна одна тема, но я покажу процес создания двух тем для случая если вы хотите во время runtime менят темы или в вашем приложении несколько [flavors](https://developer.android.com/studio/build/build-variants#product-flavors) с разными дизайнами.
 
