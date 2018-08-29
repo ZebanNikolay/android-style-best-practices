@@ -39,11 +39,13 @@
 
     <dimen name="icon_size">48dp</dimen>
     <dimen name="icon_size_small">24dp</dimen>
+
+    <dimen name="elevation_card">1dp</dimen>
 ```
 
 **colors.xml**
 
-Цвета делятся на две группы первая это непоследственно сам цвет `black`, `red_dark`, `black_tr_38` из них мы сотовляем вторую группу `brand_primary` `text_light` `icon_dark`
+Цвета делятся на две группы первая это непоследственно сам цвет `black`, `red_dark`, `black_tr_38` из них мы сотовляем вторую группу `text_primary` `surface` `icon_primary`
 ```xml
     <color name="transparent">@android:color/transparent</color>
 
@@ -55,27 +57,28 @@
     <color name="white">#FFFFFFFF</color>
     <color name="white_tr_70">#B3FFFFFF</color>
 
-    <color name="gray">#e5e5e5</color>
+    <color name="gray">#E5E5E5</color>
 
-    <color name="red_dark">#B71C1C</color>
     <color name="red_medium">#F44336</color>
+    <color name="red_dark">#B71C1C</color>
+
+    <color name="indigo_medium">#6200EE</color>
+    <color name="indigo_dark">#3700B3</color>
+
+    <color name="teal">#03DAC5</color>
 
     <color name="yellow">#FFE735</color>
     <color name="orange">#F57F17</color>
 
-    <color name="primary">@color/red_medium</color>
-    <color name="primary_dark">@color/red_dark</color>
-    <color name="accent">@color/black</color>
-
     <color name="background">@color/gray</color>
     <color name="surface">@color/white</color>
 
-    <color name="text_light">@color/white</color>
-    <color name="text_dark">@color/black_tr_87</color>
-    <color name="text_colored">@color/colorAccent</color>
+    <color name="text_primary">@color/black_tr_87</color>
+    <color name="text_primary_inverse">@color/white_tr_70</color>
+    <color name="text_secondary">?colorPrimary</color>
     <color name="text_error">@color/red_dark</color>
 
-    <color name="icon_dark">@color/black_tr_87</color>
+    <color name="icon_primary">@color/black_tr_87</color>
 ```
 
 **strings.xml** и **strings_untranslatable.xml**
@@ -99,12 +102,14 @@
 ```
 Так же не забывайте если ваш файл **strings.xml** раздулся не стесьняйтесь его дробить на более мелкие **strings_errors.xml**, **strings_buttons.xml** и т.д.
 
+Для строк частного уровня создовайте файлы типо **strings_screen_name.xml** или **strings_feature_name**
+
 ### 3.	Создаем стили текста
 Создаем файл **styles_text.xml** в нем будут хранится все стили предназначенные для стилизации текста. Добовляем в него два родительских стиля `Base.TextAppearance`, `TextAppearance` от них будут наследоваться все наши текстовые стили поэтому в них будут находится все общие параметры.
 ```xml
 <style name="Base.TextAppearance">
 	<item name="fontFamily">@string/font_roboto_regular</item>
-	<item name="android:textColor">@color/text_dark</item>
+	<item name="android:textColor">?android:textColorPrimary</item>
 	<item name="android:textStyle">normal</item>
 	<item name="textAllCaps">false</item>
 </style>
@@ -122,10 +127,10 @@
 
 <style name="TextAppearance.Button" parent="Base.TextAppearance.Button"/>
 <style name="TextAppearance.Button.Colored">
-	<item name="android:textColor">@color/text_colored</item>
+	<item name="android:textColor">?android:textColorSecondary</item>
 </style>
 <style name="TextAppearance.Button.Inverse">
-	<item name="android:textColor">@color/text_light</item>
+	<item name="android:textColor">?android:textColorPrimaryInverse</item>
 </style>
 ```
 
@@ -179,7 +184,7 @@
 
 Распостраненная ошибка это когда проставляют с помощью параметра **style**. Не стоит так делать по двум причинам:
 
-Во первых **textAppearance** может содержать только стили связанные с текстом и мы сразу обнаружем ошибку если стили например layout просачатся в наши текстовые стили.
+Во первых **textAppearance** может содержать только стили связанные с текстом и мы сразу обнаружем ошибку если параметры например layout попадут в наши текстовые стили.
 
 И во вторых это единственная возможность для слияния двух стилей.
 ```xml
@@ -196,7 +201,7 @@
 
 **styles_components.xml**
 
-В этом файле описываем компоненты нашего приложения, таким же принципом как мы это уже делали в предыдущей главе. Родительскую тему предпочитаю называть `Component` так как это название более широкое чем `Widget`. Помимо разных виджетов типо `Button` опишите еще все контейнеры.
+В этом файле описываем компоненты нашего приложения, таким же принципом как мы это уже делали в предыдущей главе. Родительскую тему предпочитаю называть `Component` так как это название более широкое чем `Widget`. Помимо разных виджетов типо `Button` опишите еще все контейнеры и текстовые компоненты.
 
 ```xml
 <style name="Component.ContentContainer">
@@ -209,6 +214,13 @@
 	<item name="android:background">@color/white</item>
 	<item name="android:padding">@dimen/spacing_small</item>
 </style>
+<style name="Component.Label">
+	<item name="android:textAppearance">@style/TextAppearance.Subtitle1</item>
+</style>
+<style name="Component.PlainText">
+	<item name="android:textAppearance">@style/TextAppearance.Body1</item>
+</style>
+
 ```
 
 ### 5.	Создаем тему нашего приложения
@@ -240,7 +252,7 @@
 ```
 Смысл тем в том чтобы соотнести нужные стили к ссылкам([attribute](https://developer.android.com/reference/org/xml/sax/Attributes)) которые мы будем простовлять непосредственно в разметке. То есть при смене темы в приложение по ссылке будет устанавливаться нужный стиль компонента.
 
-Под каждый наш компонет создаем соответствующий [attribute](https://developer.android.com/reference/org/xml/sax/Attributes) в файле **attr.xml**. И ставим его в родительскую тему если он одинаковый в дочерних темах или в дочерние если стиль разный. У некоторых компонетов атрибуты уже существуют изначально в андройде, например `buttonStyle`. Можно использовать их а не создовать новые.
+Под каждый наш компонет создаем соответствующий [attribute](https://developer.android.com/reference/org/xml/sax/Attributes) в файле **attr.xml** . Cтавим его в родительскую тему если он одинаковый в дочерних темах или в дочерние если стиль разный. У некоторых компонетов атрибуты уже существуют изначально в андройде, например `buttonStyle`. Можно использовать их а не создовать новые.
 
 В разметке используем только ссылки которые описали в теме `style="?customComponentStyle"`.
 
