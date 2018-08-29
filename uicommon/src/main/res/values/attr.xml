@@ -2,4 +2,5 @@
 <resources>
 	<attr name="customComponentStyle" format="reference"/>
 	<attr name="contentContainerStyle" format="reference"/>
+	<attr name="textColorError" format="reference"/>
 </resources>

@@ -27,9 +27,9 @@
     <color name="surface">@color/white</color>
 
     <color name="text_primary">@color/black_tr_87</color>
-    <color name="text_secondary">@color/white</color>
-    <color name="text_colored">?colorPrimary</color>
+    <color name="text_primary_inverse">@color/white_tr_70</color>
+    <color name="text_secondary">?colorPrimary</color>
     <color name="text_error">@color/red_dark</color>
 
-    <color name="icon_dark">@color/black_tr_87</color>
+    <color name="icon_primary">@color/black_tr_87</color>
 </resources>

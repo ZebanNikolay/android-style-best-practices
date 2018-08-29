@@ -3,7 +3,7 @@
 
 	<style name="Base" />
 
-	<style name="Base.TextAppearance" parent="TextAppearance.AppCompat.Subhead">
+	<style name="Base.TextAppearance">
 		<item name="fontFamily">@string/font_roboto_regular</item>
 		<item name="android:textColor">?android:textColorPrimary</item>
 		<item name="android:textStyle">normal</item>
@@ -87,11 +87,14 @@
 	<style name="TextAppearance.Body2" parent="Base.TextAppearance.Body1"/>
 	<style name="TextAppearance.Button" parent="Base.TextAppearance.Button"/>
 	<style name="TextAppearance.Button.Colored">
-		<item name="android:textColor">?android:colorPrimary</item>
-	</style>
-	<style name="TextAppearance.Button.Inverse">
 		<item name="android:textColor">?android:textColorSecondary</item>
 	</style>
+	<style name="TextAppearance.Button.Inverse">
+		<item name="android:textColor">?android:textColorPrimaryInverse</item>
+	</style>
 	<style name="TextAppearance.Caption" parent="Base.TextAppearance.Caption"/>
+	<style name="TextAppearance.Caption.Error" >
+		<item name="android:textColor">?android:textColorError</item>
+	</style>
 	<style name="TextAppearance.Overline" parent="Base.TextAppearance.Overline"/>
 </resources>

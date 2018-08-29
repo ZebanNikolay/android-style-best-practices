@@ -1,9 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 	<style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
-		<item name="android:colorBackground">@color/white</item>
+		<item name="android:colorBackground">@color/background</item>
 		<item name="android:textColorPrimary">@color/text_primary</item>
+		<item name="android:textColorPrimaryInverse">@color/text_primary_inverse</item>
 		<item name="android:textColorSecondary">@color/text_secondary</item>
+		<item name="android:textColorError">@color/text_error</item>
 
 		<item name="buttonStyle">@style/Component.Button</item>
 		<item name="contentContainerStyle">@style/Component.ContentContainer</item>

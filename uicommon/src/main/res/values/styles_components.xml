@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-	<style name="Base.Component"/>
-	<style name="Component"/>
+	<style name="Base.Component">
+		<item name="android:layout_marginTop">@dimen/spacing_small</item>
+		<item name="android:layout_marginBottom">@dimen/spacing_small</item>
+	</style>
+	<style name="Component" parent="Base.Component"/>
 
 	<style name="Base.Component.ContentContainer">
 		<item name="android:background">@color/surface</item>
@@ -21,8 +24,10 @@
 
 	<style name="Component.Label">
 		<item name="android:textAppearance">@style/TextAppearance.Subtitle1</item>
-		<item name="android:layout_marginTop">@dimen/spacing_small</item>
-		<item name="android:layout_marginBottom">@dimen/spacing_small</item>
+	</style>
+
+	<style name="Component.PlainText">
+		<item name="android:textAppearance">@style/TextAppearance.Body1</item>
 	</style>
 
 	<style name="Component.Custom"/>
