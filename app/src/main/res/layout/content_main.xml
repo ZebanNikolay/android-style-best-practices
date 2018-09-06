@@ -10,6 +10,32 @@
     tools:context=".MainActivity">
 
 	<TextView
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:fontFamily="@string/font_roboto_light"
+		android:text="Headline2"
+		android:textAppearance="@style/TextAppearance.Headline2"
+		tools:layout_editor_absoluteY="69dp"
+		tools:layout_editor_absoluteX="32dp"/>
+
+	<TextView
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:text="Headline2"
+		android:textAppearance="@style/TextAppearance.Headline2"
+		tools:layout_editor_absoluteY="201dp"
+		tools:layout_editor_absoluteX="32dp"/>
+
+	<TextView
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:text="Headline2"
+		style="@style/TextAppearance.Headline2"
+		tools:layout_editor_absoluteY="291dp"
+		tools:layout_editor_absoluteX="16dp"/>
+
+
+	<TextView
 		android:id="@+id/textView3"
 		android:layout_width="wrap_content"
 		android:layout_height="wrap_content"

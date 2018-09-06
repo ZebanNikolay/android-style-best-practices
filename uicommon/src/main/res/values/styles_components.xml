@@ -18,10 +18,6 @@
 
 	<style name="Component.ContentContainer" parent="Base.Component.ContentContainer"/>
 
-	<style name="Component.Button" parent="Widget.AppCompat.Button">
-		<item name="android:textAppearance">@style/TextAppearance.Headline3</item>
-	</style>
-
 	<style name="Component.Label">
 		<item name="android:textAppearance">@style/TextAppearance.Subtitle1</item>
 	</style>
