@@ -15,7 +15,9 @@
 		<item name="android:layout_marginTop">?actionBarSize</item>
 	</style>
 
-	<style name="Base.Component.Container.ListItem"/>
+	<style name="Component.Container.ListItem" parent="Base.Component.Container">
+		<item name="android:layout_margin">@dimen/spacing_small</item>
+	</style>
 
 	<style name="Component.Container.Content" parent="Base.Component.Container.Content"/>
 

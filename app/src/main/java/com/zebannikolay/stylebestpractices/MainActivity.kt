@@ -10,15 +10,16 @@ import android.app.Activity
 
 class MainActivity : AppCompatActivity() {
 
-    val INDIGO = "indigo"
-    val RED = "red"
+    val THEME1 = "theme1"
+    val THEME2 = "theme2"
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setTheme(getSavedTheme())
         setContentView(R.layout.activity_main)
         setSupportActionBar(toolbar)
-
+        custom_component.setText(R.string.custom_component_text)
+        plain_text.setText(R.string.plain_text)
     }
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
@@ -29,8 +30,8 @@ class MainActivity : AppCompatActivity() {
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         when(item.itemId) {
-            R.id.action_red_theme -> saveTheme(RED);
-            R.id.action_indigo_theme -> saveTheme(INDIGO);
+            R.id.action_red_theme -> saveTheme(THEME2);
+            R.id.action_indigo_theme -> saveTheme(THEME1);
             else -> super.onOptionsItemSelected(item)
         }
         return true
@@ -44,10 +45,10 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun getSavedTheme(): Int {
-        val theme = getPreferences(Activity.MODE_PRIVATE).getString("theme", INDIGO)
+        val theme = getPreferences(Activity.MODE_PRIVATE).getString("theme", THEME1)
         when (theme) {
-            RED -> return R.style.AppTheme_Theme2
-            INDIGO -> return R.style.AppTheme_Theme1
+            THEME2 -> return R.style.AppTheme_Theme2
+            THEME1 -> return R.style.AppTheme_Theme1
             else -> return R.style.AppTheme_Theme2
         }
     }
