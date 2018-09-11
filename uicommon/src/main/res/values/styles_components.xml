@@ -8,16 +8,14 @@
 
 	<style name="Base.Component.Container">
 		<item name="android:background">@color/surface</item>
+		<item name="android:padding">@dimen/spacing_small</item>
 	</style>
 
 	<style name="Base.Component.Container.Content">
-		<item name="android:padding">@dimen/spacing_normal</item>
 		<item name="android:layout_marginTop">?actionBarSize</item>
 	</style>
 
-	<style name="Base.Component.Container.ListItem">
-		<item name="android:padding">@dimen/spacing_small</item>
-	</style>
+	<style name="Base.Component.Container.ListItem"/>
 
 	<style name="Component.Container.Content" parent="Base.Component.Container.Content"/>
 
@@ -30,8 +28,12 @@
 		<item name="android:textAppearance">@style/TextAppearance.Subtitle1</item>
 	</style>
 
-	<style name="Component.PlainText">
+	<style name="Component.Theme1.PlainText" parent="Component">
 		<item name="android:textAppearance">@style/TextAppearance.Body1</item>
+	</style>
+
+	<style name="Component.Theme2.PlainText" parent="Component">
+		<item name="android:textAppearance">@style/TextAppearance.Body2</item>
 	</style>
 
 	<style name="Component.Theme1.Custom" parent="Base.Component">
