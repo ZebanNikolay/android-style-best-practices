@@ -3,4 +3,21 @@
 	<attr name="customComponentStyle" format="reference"/>
 	<attr name="contentContainerStyle" format="reference"/>
 	<attr name="componentPlainText" format="reference"/>
+	<attr name="listItemContainerStyle" format="reference"/>
+	<attr name="iconSize" format="reference"/>
+
+	<attr name="textAppearanceHeadline1" format="reference"/>
+	<attr name="textAppearanceHeadline2" format="reference"/>
+	<attr name="textAppearanceHeadline3" format="reference"/>
+	<attr name="textAppearanceHeadline4" format="reference"/>
+	<attr name="textAppearanceHeadline5" format="reference"/>
+	<attr name="textAppearanceHeadline6" format="reference"/>
+	<attr name="textAppearanceSubtitle1" format="reference"/>
+	<attr name="textAppearanceSubtitle2" format="reference"/>
+	<attr name="textAppearanceBody1" format="reference"/>
+	<attr name="textAppearanceBody2" format="reference"/>
+	<attr name="textAppearanceCaption" format="reference"/>
+	<attr name="textAppearanceButton" format="reference"/>
+	<attr name="textAppearanceOverline" format="reference"/>
+
 </resources>
