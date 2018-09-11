@@ -1,15 +1,12 @@
 package com.zebannikolay.stylebestpractices
 
 import android.os.Bundle
-import android.support.design.widget.Snackbar
 import android.support.v7.app.AppCompatActivity
 import android.view.Menu
 import android.view.MenuItem
 
 import kotlinx.android.synthetic.main.activity_main.*
 import android.app.Activity
-import kotlinx.android.synthetic.main.content_main.*
-import android.content.SharedPreferences
 
 class MainActivity : AppCompatActivity() {
 
@@ -49,9 +46,9 @@ class MainActivity : AppCompatActivity() {
     private fun getSavedTheme(): Int {
         val theme = getPreferences(Activity.MODE_PRIVATE).getString("theme", INDIGO)
         when (theme) {
-            RED -> return R.style.AppTheme_Red
-            INDIGO -> return R.style.AppTheme_Indigo
-            else -> return R.style.AppTheme_Red
+            RED -> return R.style.AppTheme_Theme2
+            INDIGO -> return R.style.AppTheme_Theme1
+            else -> return R.style.AppTheme_Theme2
         }
     }
 }

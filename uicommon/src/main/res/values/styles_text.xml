@@ -83,8 +83,11 @@
 	<style name="TextAppearance.Headline6" parent="Base.TextAppearance.Headline6"/>
 	<style name="TextAppearance.Subtitle1" parent="Base.TextAppearance.Subtitle1"/>
 	<style name="TextAppearance.Subtitle2" parent="Base.TextAppearance.Subtitle2"/>
-	<style name="TextAppearance.Body1" parent="Base.TextAppearance.Body2"/>
-	<style name="TextAppearance.Body2" parent="Base.TextAppearance.Body1"/>
+	<style name="TextAppearance.Body1" parent="Base.TextAppearance.Body1"/>
+	<style name="TextAppearance.Body1.Inverse">
+		<item name="android:textColor">?android:textColorPrimaryInverse</item>
+	</style>
+	<style name="TextAppearance.Body2" parent="Base.TextAppearance.Body2"/>
 	<style name="TextAppearance.Button" parent="Base.TextAppearance.Button"/>
 	<style name="TextAppearance.Button.Colored">
 		<item name="android:textColor">?android:textColorSecondary</item>
@@ -94,7 +97,7 @@
 	</style>
 	<style name="TextAppearance.Caption" parent="Base.TextAppearance.Caption"/>
 	<style name="TextAppearance.Caption.Error" >
-		<item name="android:textColor">?android:textColorError</item>
+		<item name="android:textColor">?textColorError</item>
 	</style>
 	<style name="TextAppearance.Overline" parent="Base.TextAppearance.Overline"/>
 </resources>

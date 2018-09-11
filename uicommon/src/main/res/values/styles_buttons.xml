@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 	<style name="Component.Button" parent="Widget.AppCompat.Button">
-		<item name="android:textAppearance">@style/TextAppearance.Headline3</item>
+		<item name="android:textAppearance">@style/TextAppearance.Button.Colored</item>
 	</style>
 </resources>

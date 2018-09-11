@@ -20,9 +20,6 @@
 
     <color name="teal">#03DAC5</color>
 
-    <color name="yellow">#FFE735</color>
-    <color name="orange">#F57F17</color>
-
     <color name="background">@color/gray</color>
     <color name="surface">@color/white</color>
 

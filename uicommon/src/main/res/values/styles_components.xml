@@ -6,17 +6,25 @@
 	</style>
 	<style name="Component" parent="Base.Component"/>
 
-	<style name="Base.Component.ContentContainer">
+	<style name="Base.Component.Container">
 		<item name="android:background">@color/surface</item>
-		<item name="android:padding">@dimen/spacing_normal</item>
 	</style>
 
-	<style name="Base.Component.ListItemContainer">
-		<item name="android:background">@color/white</item>
+	<style name="Base.Component.Container.Content">
+		<item name="android:padding">@dimen/spacing_normal</item>
+		<item name="android:layout_marginTop">?actionBarSize</item>
+	</style>
+
+	<style name="Base.Component.Container.ListItem">
 		<item name="android:padding">@dimen/spacing_small</item>
 	</style>
 
-	<style name="Component.ContentContainer" parent="Base.Component.ContentContainer"/>
+	<style name="Component.Container.Content" parent="Base.Component.Container.Content"/>
+
+	<style name="Component.Toolbar" parent="Widget.AppCompat.Toolbar">
+		<item name="android:background">?attr/colorPrimary</item>
+		<item name="popupTheme">@style/ThemeOverlay.AppCompat.Light</item>
+	</style>
 
 	<style name="Component.Label">
 		<item name="android:textAppearance">@style/TextAppearance.Subtitle1</item>
@@ -26,11 +34,11 @@
 		<item name="android:textAppearance">@style/TextAppearance.Body1</item>
 	</style>
 
-	<style name="Component.Custom"/>
-	<style name="Component.Custom.One">
+	<style name="Component.Theme1.Custom" parent="Base.Component">
 		<item name="android:textAppearance">@style/TextAppearance.Headline5</item>
 	</style>
-	<style name="Component.Custom.Second">
+
+	<style name="Component.Theme2.Custom" parent="Base.Component">
 		<item name="android:textAppearance">@style/TextAppearance.Headline6</item>
 	</style>
 
