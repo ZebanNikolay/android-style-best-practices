@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-	<style name="Base" />
-
-	<style name="Base.TextAppearance">
+	<style name="Base.TextAppearance" parent="TextAppearance.AppCompat">
 		<item name="fontFamily">@string/font_roboto_regular</item>
 		<item name="android:textColor">?android:textColorPrimary</item>
 		<item name="android:textStyle">normal</item>

@@ -2,10 +2,10 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     tools:context="com.zebannikolay.stylebestpractices.MainActivity" >
-    <item android:id="@+id/action_red_theme"
+    <item android:id="@+id/action_theme2"
         android:title="@string/action_red_theme"
         app:showAsAction="never" />
-    <item android:id="@+id/action_indigo_theme"
+    <item android:id="@+id/action_theme1"
         android:title="@string/action_indigo_theme"
         app:showAsAction="never" />
 </menu>

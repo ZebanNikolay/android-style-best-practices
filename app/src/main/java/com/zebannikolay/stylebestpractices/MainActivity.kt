@@ -1,12 +1,11 @@
 package com.zebannikolay.stylebestpractices
 
+import android.app.Activity
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
 import android.view.Menu
 import android.view.MenuItem
-
 import kotlinx.android.synthetic.main.activity_main.*
-import android.app.Activity
 
 class MainActivity : AppCompatActivity() {
 
@@ -30,8 +29,8 @@ class MainActivity : AppCompatActivity() {
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         when(item.itemId) {
-            R.id.action_red_theme -> saveTheme(THEME2);
-            R.id.action_indigo_theme -> saveTheme(THEME1);
+            R.id.action_theme2 -> saveTheme(THEME2);
+            R.id.action_theme1 -> saveTheme(THEME1);
             else -> super.onOptionsItemSelected(item)
         }
         return true

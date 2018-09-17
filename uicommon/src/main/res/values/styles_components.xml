@@ -1,5 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+
+	<style name="Base" />
+
 	<style name="Base.Component">
 		<item name="android:layout_marginTop">@dimen/spacing_small</item>
 		<item name="android:layout_marginBottom">@dimen/spacing_small</item>
@@ -12,7 +15,8 @@
 	</style>
 
 	<style name="Base.Component.Container.Content">
-		<item name="android:layout_marginTop">?actionBarSize</item>
+		<item name="android:layout_marginTop">0dp</item>
+		<item name="android:layout_marginBottom">0dp</item>
 	</style>
 
 	<style name="Component.Container.ListItem" parent="Base.Component.Container">
