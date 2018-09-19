@@ -56,9 +56,11 @@
 
     <color name="white">#FFFFFFFF</color>
     <color name="white_tr_70">#B3FFFFFF</color>
+    <color name="white_tr_38">#61FFFFFF</color>
 
     <color name="gray">#E5E5E5</color>
 
+    <color name="red_light">#f18179</color>
     <color name="red_medium">#F44336</color>
     <color name="red_dark">#B71C1C</color>
 
@@ -67,16 +69,17 @@
 
     <color name="teal">#03DAC5</color>
 
-    <color name="yellow">#FFE735</color>
-    <color name="orange">#F57F17</color>
-
     <color name="background">@color/gray</color>
     <color name="surface">@color/white</color>
 
-    <color name="text_primary">@color/black_tr_87</color>
-    <color name="text_primary_inverse">@color/white_tr_70</color>
-    <color name="text_secondary">?colorPrimary</color>
-    <color name="text_error">@color/red_dark</color>
+    <color name="text_primary_enable">@color/black_tr_87</color>
+    <color name="text_primary_disable">@color/black_tr_38</color>
+    <color name="text_primary_inverse_enable">@color/white_tr_70</color>
+    <color name="text_primary_inverse_disable">@color/white_tr_38</color>
+    <color name="text_secondary_enable">?colorPrimary</color>
+    <color name="text_secondary_disable">?colorPrimaryDark</color>
+    <color name="text_error_enable">@color/red_dark</color>
+    <color name="text_error_disable">@color/red_light</color>
 
     <color name="icon_primary">@color/black_tr_87</color>
 ```
