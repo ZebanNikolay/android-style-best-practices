@@ -206,25 +206,7 @@
 
 В этом файле описываем компоненты нашего приложения, таким же принципом как мы это уже делали в предыдущей главе. Родительскую тему предпочитаю называть `Component` так как это название более широкое чем `Widget`. Помимо разных виджетов типо `Button` опишите еще все контейнеры и текстовые компоненты.
 
-```xml
-<style name="Component.ContentContainer">
-	<item name="android:background">@color/surface</item>
-	<item name="android:padding">@dimen/spacing_normal</item>
-	<item name="android:elevation">@dimen/elevation_card</item>
-</style>
-
-<style name="Component.ListItemContainer">
-	<item name="android:background">@color/white</item>
-	<item name="android:padding">@dimen/spacing_small</item>
-</style>
-<style name="Component.Label">
-	<item name="android:textAppearance">@style/TextAppearance.Subtitle1</item>
-</style>
-<style name="Component.PlainText">
-	<item name="android:textAppearance">@style/TextAppearance.Body1</item>
-</style>
-
-```
+Полный файл [styles_components.xml](./uicommon/src/main/res/values/styles_components.xml)
 
 ### 5.	Создаем тему нашего приложения
 Обычно одному приложению нужна одна тема, но я покажу процес создания двух тем для случая если вы хотите во время runtime менят темы или в вашем приложении несколько [flavors](https://developer.android.com/studio/build/build-variants#product-flavors) с разными дизайнами.
@@ -232,26 +214,52 @@
 Добавляем файл **styles_themes.xml**, а в нем создаем нашу родительскую тему от которой мы будем наследоваться. Она описывает общие параметры. И создаем две темы дочерних темы в которых описываем различающиеся параметры.
 
 ```xml
-<style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
-	<item name="android:colorBackground">@color/white</item>
+	<style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+		<item name="android:colorBackground">@color/background</item>
+		<item name="android:textColorPrimary">@color/text_primary</item>
+		<item name="android:textColorPrimaryInverse">@color/text_primary_inverse</item>
+		<item name="android:textColorSecondary">@color/text_secondary</item>
+		<item name="textColorError">@color/text_error</item>
 
-	<item name="buttonStyle">@style/Component.Button</item>
-</style>
-<style name="AppTheme.Indigo">
-	<item name="colorPrimary">@color/indigo_medium</item>
-	<item name="colorPrimaryDark">@color/indigo_dark</item>
-	<item name="colorAccent">@color/orange</item>
+		<item name="textAppearanceHeadline1">@style/TextAppearance.Headline1</item>
+		<item name="textAppearanceHeadline2">@style/TextAppearance.Headline2</item>
+		<item name="textAppearanceHeadline3">@style/TextAppearance.Headline3</item>
+		<item name="textAppearanceHeadline4">@style/TextAppearance.Headline4</item>
+		<item name="textAppearanceHeadline5">@style/TextAppearance.Headline5</item>
+		<item name="textAppearanceHeadline6">@style/TextAppearance.Headline6</item>
+		<item name="textAppearanceSubtitle1">@style/TextAppearance.Subtitle1</item>
+		<item name="textAppearanceSubtitle2">@style/TextAppearance.Subtitle2</item>
+		<item name="textAppearanceBody1">@style/TextAppearance.Body1</item>
+		<item name="textAppearanceBody2">@style/TextAppearance.Body2</item>
+		<item name="textAppearanceCaption">@style/TextAppearance.Caption</item>
+		<item name="textAppearanceButton">@style/TextAppearance.Button</item>
+		<item name="textAppearanceOverline">@style/TextAppearance.Overline</item>
 
-	<item name="customComponentStyle">@style/Component.Custom.One</item>
-</style>
+		<item name="buttonStyle">@style/Component.Button</item>
+		<item name="contentContainerStyle">@style/Component.Container.Content</item>
+		<item name="listItemContainerStyle">@style/Component.Container.ListItem</item>
+		<item name="toolbarStyle">@style/Component.Toolbar</item>
+		<item name="iconSize">@dimen/icon_size</item>
 
-<style name="AppTheme.Red">
-	<item name="colorPrimary">@color/red_medium</item>
-	<item name="colorPrimaryDark">@color/red_dark</item>
-	<item name="colorAccent">@color/black</item>
-	
-	<item name="customComponentStyle">@style/Component.Custom.Second</item>
-</style>
+	</style>
+
+	<style name="AppTheme.Theme1">
+		<item name="colorPrimary">@color/indigo_medium</item>
+		<item name="colorPrimaryDark">@color/indigo_dark</item>
+		<item name="colorAccent">@color/teal</item>
+
+		<item name="customComponentStyle">@style/Component.Theme1.Custom</item>
+		<item name="componentPlainText">@style/Component.Theme1.PlainText</item>
+	</style>
+
+	<style name="AppTheme.Theme2">
+		<item name="colorPrimary">@color/red_medium</item>
+		<item name="colorPrimaryDark">@color/red_dark</item>
+		<item name="colorAccent">@color/black</item>
+
+		<item name="customComponentStyle">@style/Component.Theme2.Custom</item>
+		<item name="componentPlainText">@style/Component.Theme2.PlainText</item>
+	</style>
 ```
 Смысл тем в том чтобы соотнести нужные стили к ссылкам([attribute](https://developer.android.com/reference/org/xml/sax/Attributes)) которые мы будем простовлять непосредственно в разметке. То есть при смене темы в приложение по ссылке будет устанавливаться нужный стиль компонента.
 
