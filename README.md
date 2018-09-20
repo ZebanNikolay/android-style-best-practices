@@ -84,7 +84,7 @@
     <color name="icon_primary">@color/black_tr_87</color>
 ```
 
-**strings.xml** и **strings_untranslatable.xml**
+**strings.xml**
  
 В **strings.xml** мы складываем общие строки уровня приложения
 ```xml
@@ -97,11 +97,6 @@
 	<string name="error_message_an_error">An error occurred</string>
 	<string name="error_message_call">Call failed</string>
 	<string name="error_message_download">File download failed</string>
-```
-В **strings_untranslatable.xml** складываем не переводимые строки типо ссылок или api ключей
-```xml
-	<string name="server_url" translatable="false">https://github.com/ZebanNikolay/android-style-best-practices</string>
-	<string name="some_service_api_key" translatable="false">key</string>
 ```
 Так же не забывайте если ваш файл **strings.xml** раздулся не стесьняйтесь его дробить на более мелкие **strings_errors.xml**, **strings_buttons.xml** и т.д.
 
